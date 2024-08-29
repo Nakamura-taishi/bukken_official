@@ -52,7 +52,14 @@ footer {
     display: flex;
 }
 
-footer button {
+footer a {
+    font: inherit;
+    text-decoration: inherit;
+    padding-block: 1px;
+    line-height: 2;
+}
+
+footer a {
     width: 20%;
     margin-left: 80%;
     background: #ff701e;
