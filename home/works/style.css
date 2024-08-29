@@ -39,6 +39,12 @@ ul {
     transition-timing-function: ease-in;
 }
 
+#grades li a {
+    font: inherit;
+    color: inherit;
+    text-decoration: inherit;
+}
+
 #grades li div {
     background-color: white;
 }
