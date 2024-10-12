@@ -13,23 +13,33 @@
         <h1>期ごとの一覧</h1>
         <!--この辺はID多用してる　形式を揃えたいならclassにして-->
         <!--紹介文：id={num}_intro, 写真：id={num}_pic-->
+        <!--
+        ・クリックして各タブを開く
+        ・タブを開くときにすでに開いているタブがあれば閉じる
+        この際の閉じる関数は今開いているタブを再クリックして閉じる関数とは背景変更のけ挙動が異なる
+        -->
         <li id="g138">
-            <p><button id="g138_button">138期</button></p>
-            <div id="138_intro">
+            <p><button class="GradeButton" id="g138_button">138期</button></p>
+            <div id="g138_intro">
                 <p>紹介文(なくてもいい)</p>
                 <img src="" alt="制作物の画像">
-                <a href="./138/index.html">ページへ</a>
+                <a class="to_nextPage" href="./138/index.html">
+                    <p>Go to Page</p>
+                </a>
             </div>
         </li>
         <li id="g139">
-            <p><button>138期</button></p>
-            <div id="139_intro">
+            <p><button class="GradeButton" id="g139_button">139期</button></p>
+            <div id="g139_intro">
                 <p>紹介文(なくてもいい)</p>
                 <img src="" alt="制作物の画像">
-                <a href="./">ページへ</a>
+                <a class="to_nextPage" href="./">
+                    <p>Go to Page</p>
+                </a>
             </div>
         </li>
-        
+        <img class="moving_img" id="g138_pic" src="./138_num.png" alt="138期の画像">
+        <img class="moving_img" id="g139_pic" src="./139_num.png" alt="139期の画像">
     </ul>
     <div id="pager">
         <ul>

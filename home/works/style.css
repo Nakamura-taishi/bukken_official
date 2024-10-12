@@ -32,10 +32,10 @@ ul {
 
 #grades li:hover {
     background-color: rgb(141, 235, 238);
-    width: 70%;
+
     height: 12em;
     margin-bottom: 0em;
-    transition: 0.4s 0s all;
+    transition: 0.2s 0s all;
     transition-timing-function: ease-in;
 }
 
@@ -47,20 +47,48 @@ ul {
 
 #grades li div {
     background-color: white;
-}
-
-#grades li div {
     display: none;
-    height: 0px;
+    height: 8em;
+    position: relative;
 }
 
-#grades li:hover div {
-    display: block;
+#grades li div a {
+    position: absolute;
+    right: 0;
+    top: 0;
     height: 8em;
+    width: 30%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgba(49, 170, 226, 0.9) 50%);
+    background-position: 3px 0;
+    background-size: 200% auto;
+    transition: .3s;
+}
+
+#grades li div a p {
+    font-size: larger;
+    margin-top: 3em;
+    margin-left: 2em;
+    margin-right: 2em;
+    text-align: center;
+    color: #000;
+}
+
+#grades li div a:hover {
+    background-position: -100% 0;
+}
+
+#grades li div a:hover p {
+    color: #fff;
 }
 
 #grades li {
     margin: 0em auto 9em 0;
+}
+
+.moving_img {
+    z-index: 1;
+    position: absolute;
+    top: 40%;
 }
 
 #pager {
@@ -68,6 +96,7 @@ ul {
     width: 15%;
     padding: 0 2em 0 2em;
     min-height: 100vh;
+    z-index: 2;
 }
 
 #pager ul {
