@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
+
 body,
 html {
     margin: 0;
@@ -72,4 +74,18 @@ footer a {
     max-width: 20%;
     padding: 0;
     text-align: center;
+}
+
+#page_name{
+    font-family: 'M PLUS 1p', sans-serif;
+}
+
+.topic {
+    border-bottom: 1px solid #000;
+    font-size: large;
+}
+
+.weak {
+    color: gray;
+    font-size: small;
 }
