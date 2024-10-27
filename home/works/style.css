@@ -14,35 +14,43 @@ body {
 
 ul {
     list-style: none;
+    padding-left: 0;
 }
 
 #contents {
     margin: 2% 3% auto 3%;
     padding-top: 3em;
     padding-bottom: 3em;
+    padding-left: 3em;
     background-color: rgb(220, 255, 255);
     border-radius: 20px;
     width: 80%;
 }
 
-#contents li {
+#contents li details {
     background-color: cadetblue;
     margin: 0 auto auto 0;
     padding: 0.4em;
     border-width: 4px;
     width: 60%;
-    height: 3em;
+    max-height: 4em;  /* transitionを動作させるためだけに設定 */
     border-color: black;
 
 }
 
-#contents li:hover {
+#contents li details[open] {
     background-color: rgb(141, 235, 238);
 
-    height: 12em;
+    max-height: 1000vh;  /* transitionを動作させるためだけに設定 */
     margin-bottom: 0em;
     transition: 0.2s 0s all;
     transition-timing-function: ease-in;
+}
+
+#contents li summary {
+    list-style: none;
+    padding: 0.7em 0.2em;
+    cursor: pointer;
 }
 
 #contents li a {
@@ -57,8 +65,8 @@ ul {
     text-align: left;
     color: #fff;
     font-size: large;
-    width: 100%;
-    height: 3em;
+    /* width: 100%; */
+    /* height: 3em; */
 }
 
 
@@ -75,13 +83,17 @@ ul {
 
 #contents li div {
     background-color: white;
-    display: none;
-    height: 8em;
+    /* display: none; */
+    display: flex;
+    align-items: stretch;
+    /* height: 8em; */ /* 何のために設定している？設定するならmin-heightの方が良いかと */
+    min-height: 8em;
     position: relative;
 }
 
 #contents li div section {
-    width: 70%;
+    /* width: 70%; */
+    flex: 7;
     right: 0;
 }
 
@@ -90,22 +102,28 @@ ul {
 }
 
 #contents li div a {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 8em;
-    width: 30%;
+    /* position: absolute; */
+    /* right: 0; */
+    /* top: 0; */
+    /* height: 8em; */ /* 何のために設定している？設定するならmin-heightの方が良いかと */
+    /* min-height: 8em; */ /* display: flex; の設定により、section要素の大きさと同じになるので削除 */
+    /* width: 30%; */
+    flex: 3;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgba(49, 170, 226, 0.9) 50%);
     background-position: 3px 0;
     background-size: 200% auto;
-    transition: .3s;
+    transition: 0.3s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #contents li div a p {
     font-size: larger;
-    margin-top: 3em;
-    margin-left: 2em;
-    margin-right: 2em;
+    /* margin-top: 3em; */
+    /* margin-left: 2em; */
+    /* margin-right: 2em; */
     text-align: center;
     color: #000;
 }
@@ -119,7 +137,8 @@ ul {
 }
 
 #contents li {
-    margin: 0em auto 9em 0;
+    /* margin: 0em auto 9em 0; */
+    margin-bottom: 1em;
 }
 
 .moving_img {

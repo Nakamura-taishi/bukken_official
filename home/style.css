@@ -7,6 +7,10 @@ html {
 }
 
 body {
+    margin-bottom: 10vh;
+}
+
+body {
     background-image: url('./bukken_logo.png');
     
     background-size: 90%;
@@ -37,7 +41,7 @@ p {
 }
 
 #main_contents {
-    
+    margin: 0 5vw;
 }
 
 #introduce {
@@ -94,6 +98,7 @@ footer a {
 
 #page_name{
     font-family: 'M PLUS 1p', sans-serif;
+    margin-left: 8px;
 }
 
 .topic {

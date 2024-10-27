@@ -10,49 +10,92 @@
 </head>
 
 <body>
-    <ul id="contents">
+    <div id="contents">
         <h1>138期制作物一覧</h1>
-        <li id="c0">
-            <p><button class="toggleButton" id="c0_button">レーシングゲーム</button></p>
-            <div id="c0_intro">
-                <section>
-                    <p>2024年度六稜祭にて展示。<br>Blenderで車体やコース・背景など3Dオブジェクトをモデリングし、Unityを用いて制作。<br>PC推奨</p>
-                </section>
-                <a class="to_nextPage" href="./138/index.html">
-                    <p>Go to Page</p>
-                </a>
-            </div>
-        </li>
-        <li id="c1">
-            <p><button class="toggleButton" id="c1_button">ストラテジーゲーム</button></p>
-            <div id="c1_intro">
-                <section>
-                    <p>2024年度六稜祭にて展示。<br>制作を通して、プログラミング未経験の部員がC#やUnityの練習を行った。<br>PC推奨</p>
-                </section>
-                <a class="to_nextPage" href="./">
-                    <p>Go to Page</p>
-                </a>
-            </div>
-        </li>
-        <li id="c2">
-            <p><button class="toggleButton" id="c2_button">その他</button></p>
-            <div id="c2_intro">
-                <section>
-                    <p>六稜祭宣伝用のポスター二枚<br>デスクトップPC(メンテナンス)<br>公式キャラクター<br>公式サイト</p>
-                </section>
-                <a class="to_nextPage" href="./">
-                    <p>Go to Page</p>
-                </a>
-            </div>
-        </li>
+        <ul>
+            <!--
+            <li id="c0">
+                <p><button class="toggleButton" id="c0_button">レーシングゲーム</button></p>
+                <div id="c0_intro">
+                    <section>
+                        <p>2024年度六稜祭にて展示。<br>Blenderで車体やコース・背景など3Dオブジェクトをモデリングし、Unityを用いて制作。<br>PC推奨</p>
+                    </section>
+                    <a class="to_nextPage" href="./138/">
+                        <p>Go to Page</p>
+                    </a>
+                </div>
+            </li>
+            <li id="c1">
+                <p><button class="toggleButton" id="c1_button">ストラテジーゲーム</button></p>
+                <div id="c1_intro">
+                    <section>
+                        <p>2024年度六稜祭にて展示。<br>制作を通して、プログラミング未経験の部員がC#やUnityの練習を行った。<br>PC推奨</p>
+                    </section>
+                    <a class="to_nextPage" href="./">
+                        <p>Go to Page</p>
+                    </a>
+                </div>
+            </li>
+            <li id="c2">
+                <p><button class="toggleButton" id="c2_button">その他</button></p>
+                <div id="c2_intro">
+                    <section>
+                        <p>六稜祭宣伝用のポスター二枚<br>デスクトップPC(メンテナンス)<br>公式キャラクター<br>公式サイト</p>
+                    </section>
+                    <a class="to_nextPage" href="./">
+                        <p>Go to Page</p>
+                    </a>
+                </div>
+            </li>
+            -->
+            <li id="c0">
+                <details>
+                    <summary class="toggleButton" id="c0_button">レーシングゲーム</summary>
+                    <div id="c0_intro">
+                        <section>
+                            <p>2024年度六稜祭にて展示。<br>Blenderで車体やコース・背景など3Dオブジェクトをモデリングし、Unityを用いて制作。<br>PC推奨</p>
+                        </section>
+                        <a class="to_nextPage" href="./138/">
+                            <p>Go to Page</p>
+                        </a>
+                    </div>
+                </details>
+            </li>
+            <li id="c1">
+                <details>
+                    <summary class="toggleButton" id="c1_button">ストラテジーゲーム</summary>
+                    <div id="c1_intro">
+                        <section>
+                            <p>2024年度六稜祭にて展示。<br>制作を通して、プログラミング未経験の部員がC#やUnityの練習を行った。<br>PC推奨</p>
+                        </section>
+                        <a class="to_nextPage" href="./">
+                            <p>Go to Page</p>
+                        </a>
+                    </div>
+                </details>
+            </li>
+            <li id="c2">
+                <details>
+                    <summary class="toggleButton" id="c2_button">その他</summary>
+                    <div id="c2_intro">
+                        <section>
+                            <p>六稜祭宣伝用のポスター二枚<br>デスクトップPC(メンテナンス)<br>公式キャラクター<br>公式サイト</p>
+                        </section>
+                        <a class="to_nextPage" href="./">
+                            <p>Go to Page</p>
+                        </a>
+                    </div>
+                </details>
+            </li>
+        </ul>
         <img class="moving_img" id="c0_pic" src="./bukken_logo.png" alt="レーシングゲーム画像">
         <img class="moving_img" id="c1_pic" src="./strategy.jpg" alt="ストラテジーゲーム画像">
         <img class="moving_img" id="c2_pic" src="./139_num.png" alt="その他画像">
-    </ul>
+    </div>
     <div id="pager">
         <ul>
-            <li><a href="../../index.html">トップページ</a></li>
-            <li><a href="../index.html">期ごと一覧</a></li>
+            <li><a href="../../">トップページ</a></li>
+            <li><a href="../">期ごと一覧</a></li>
         </ul>
     </div>
     <script src="../script.js"></script>
