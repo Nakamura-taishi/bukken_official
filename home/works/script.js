@@ -6,16 +6,16 @@ const movingImgs = document.querySelectorAll(".moving_img");
 
 
 intros.forEach(intro => {
-  intro.style.display = "none";
+  //intro.style.display = "none";
 })
 buttons.forEach((button, i) => {
-  button.addEventListener('click', () => {
+  button.addEventListener('click', () => {  // detailsタグを採用する場合は(summary要素).onClickでなく(details要素).onToggleを使用
     next = FirstContentIndex + i;
     if (!done) {
       botherd = true;
     }
     done = !done;
-    if (intros[i].style.display == "none") {
+    if (intros[i].style.display == "none" || document.querySelector(`#c${next} details`).open || current === undefined) {
       open(current, next);
       current = next;
     } else {
@@ -109,20 +109,23 @@ function slideOut(timestamp) {
 //(現在開いているコンテンツのindex,クリックしたコンテンツのindex)
 function open(current, next) {
   if (current != undefined) {
-    document.querySelector(`#c${current}_intro`).style.display = "none";
+    //document.querySelector(`#c${current}_intro`).style.display = "none";
     picture = document.querySelector(`#c${current}_pic`);
     picture.style.transform = `translateX(${PictureOriginPosition})`;
     picture.style.opacity = "0.0";
     start = undefined;
   }
-  document.querySelector(`#c${next}_intro`).style.display = "block";
+  //document.querySelector(`#c${next}_intro`).style.display = "block"; これはcssで指定するもの。 element.style.display = ""; とするとよい
   picture = document.querySelector(`#c${next}_pic`);
   window.requestAnimationFrame(slideIn);
 
 }
 //上のcurrentと同意味
 function close(current) {
-  document.querySelector(`#c${current}_intro`).style.display = "none";
+  //document.querySelector(`#c${current}_intro`).style.display = "none";
+  console.log(current);
+  console.log(document.querySelector(`#c${current} details`));
+  document.querySelector(`#c${current} details`).open = false;
   picture = document.querySelector(`#c${current}_pic`);
   window.requestAnimationFrame(slideOut);
   start = undefined;
