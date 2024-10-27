@@ -3,7 +3,7 @@ const contents_li_sample_RectData = document.querySelector("#contents li").getBo
 const buttons = document.querySelectorAll(".toggleButton");
 const intros = document.querySelectorAll("#contents li div");
 const movingImgs = document.querySelectorAll(".moving_img");
-
+const imgNameCheckList = ["bukken_logo", "80", "strategy", "40", "racing", "60", "others", "50"];
 
 intros.forEach(intro => {
   intro.style.display = "none";
@@ -25,6 +25,20 @@ buttons.forEach((button, i) => {
 
 });
 
+movingImgs.forEach((img, j) => {
+  for(let i = 0; i < movingImgs.length + 1; i++){
+    if(img.name == imgNameCheckList[i * 2]){
+      img.style.height = imgNameCheckList[i * 2 + 1] + "vh";
+      
+      console.log(imgNameCheckList[i * 2 + 1])
+      img.style.width = "auto"; 
+    }
+  }
+  console.log(img)
+  img.style.top = buttons[j].getBoundingClientRect().top + "px";
+})
+
+
 
 let picture;
 let start, previousTimeStamp;
@@ -41,6 +55,7 @@ const FirstContentIndex = 0;
 
 movingImgs.forEach(img => {
   img.style.transform = `translateX(${PictureOriginPosition}px)`;
+
 })
 
 function slideIn(timestamp) {
@@ -110,12 +125,14 @@ function slideOut(timestamp) {
 function open(current, next) {
   if (current != undefined) {
     document.querySelector(`#c${current}_intro`).style.display = "none";
+    document.querySelector(`li:has(#c${current}_intro)`).className = "toggleOffContent";
     picture = document.querySelector(`#c${current}_pic`);
     picture.style.transform = `translateX(${PictureOriginPosition})`;
     picture.style.opacity = "0.0";
     start = undefined;
   }
   document.querySelector(`#c${next}_intro`).style.display = "block";
+  document.querySelector(`li:has(#c${next}_intro)`).className = "toggleOnContent";
   picture = document.querySelector(`#c${next}_pic`);
   window.requestAnimationFrame(slideIn);
 
@@ -123,6 +140,7 @@ function open(current, next) {
 //上のcurrentと同意味
 function close(current) {
   document.querySelector(`#c${current}_intro`).style.display = "none";
+  document.querySelector(`li:has(#c${current}_intro)`).className = "toggleOffContent";
   picture = document.querySelector(`#c${current}_pic`);
   window.requestAnimationFrame(slideOut);
   start = undefined;

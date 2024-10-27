@@ -18,7 +18,7 @@
         ・タブを開くときにすでに開いているタブがあれば閉じる
         この際の閉じる関数は今開いているタブを再クリックして閉じる関数とは背景変更のけ挙動が異なる
         -->
-        <li id="c0">
+        <li id="c0" class="toggleOffContent">
             <p><button class="toggleButton" id="c0_button">138期</button></p>
             <div id="c0_intro">
                 <section>
@@ -29,8 +29,7 @@
                 </a>
             </div>
         </li>
-        <!--
-        <li id="c1">
+        <li id="c1" class="toggleOffContent">
             <p><button class="toggleButton" id="c1_button">139期</button></p>
             <div id="c1_intro">
                 <section>
@@ -41,9 +40,8 @@
                 </a>
             </div>
         </li>
-        -->
-        <img class="moving_img" id="c0_pic" src="./bukken_logo.png" alt="138期の画像">
-        <img class="moving_img" id="c1_pic" src="./139_num.png" alt="139期の画像">
+        <img class="moving_img" id="c0_pic" name="bukken_logo" src="./bukken_logo.png" alt="138期の画像">
+        <img class="moving_img" id="c1_pic" name="" src="./139_num.png" alt="139期の画像">
     </ul>
     <div id="pager">
         <ul>
@@ -51,6 +49,7 @@
 
         </ul>
     </div>
+    <p class="weak">ver. 0.0.0</p>
     <script src="./script.js"></script>
 </body>
 

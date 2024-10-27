@@ -1,5 +1,9 @@
 html{
     height: 100%;
+    user-select: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    overflow-x: hidden;
 }
 
 body {
@@ -24,23 +28,32 @@ ul {
     border-radius: 20px;
     width: 80%;
 }
+#contents li:hover .toggleButton{
+    background-color: rgb(141, 235, 238);
+    transition: 0.2s 0s all;
+    transition-timing-function: ease-in;
+}
 
-#contents li {
+.toggleOffContent {
     background-color: cadetblue;
-    margin: 0 auto auto 0;
+    margin: 0 auto 9em 0;
     padding: 0.4em;
     border-width: 4px;
     width: 60%;
     height: 3em;
     border-color: black;
-
 }
 
-#contents li:hover {
+.toggleOnContent {
     background-color: rgb(141, 235, 238);
 
     height: 12em;
+    margin: 0 auto auto 0;
     margin-bottom: 0em;
+    padding: 0.4em;
+    border-width: 4px;
+    width: 60%;
+    border-color: black;
     transition: 0.2s 0s all;
     transition-timing-function: ease-in;
 }
@@ -61,7 +74,11 @@ ul {
     height: 3em;
 }
 
-
+.toggleOnContent .toggleButton {
+    background-color: rgb(141, 235, 238);
+    transition: 0.2s 0s all;
+    transition-timing-function: ease-in;
+}
 
 #contents li p{
     margin-top: 0;
@@ -118,9 +135,7 @@ ul {
     color: #fff;
 }
 
-#contents li {
-    margin: 0em auto 9em 0;
-}
+
 
 .moving_img {
     z-index: 1;
@@ -150,4 +165,8 @@ ul {
     border-radius: 10px;
     margin-top: 10%;
 
+}
+.weak {
+    font-size: 0.8em;
+    color: gray;
 }
