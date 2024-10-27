@@ -1,21 +1,122 @@
-WEBGLでビルド
-ページの動作を観測
-ページデザインを計画：
-おそらく期別にページを制作する
-紹介文（キャラクター紹介など）
-制作物ー期ーゲームーそれぞれのゲーム（注意書き付加）
-　　　　　｜ーその他
-
-「それぞれのゲーム」のデザイン
-ゲーム名・ゲーム画面　背景カラー
-触れるとゲーム紹介文が開く
-紹介文中に「PC（orモバイル）推奨」とかを書く
-
-以下、改善点
-・アーカイブ(works,138配下のindex.htmlのメインコンテンツul内のli)のアニメーションをなくして、
-ホバー時に内容の画像を右側の空白にスライドインさせる
+改善点
 ・期ごとに特色のあるデザインを作成する
-・fontを変える
-・物研のロゴを使う
-・ダサさを軽減する
-・スマホ版：ホバーギミックなし、サイトマップはタップ時に開くように
+・スマホ版：ホバーギミックなし
+
+
+
+このサイトの構造について
+ページ遷移マップ：
+トップページ
+(bukken_official
+/home/index.html
+/home/style.css){
+
+    公式X,
+    期ごと一覧
+    (Grade_browse
+    /home/works/index.html
+    /home/works/style.css
+    /home/works/script.js
+    ){
+
+        138期
+        (138grade_browse
+        /home/works/138/index.html
+        /home/works/style.css
+        /home/works/script.js
+        ){
+            レーシングゲーム
+            (Unity WebGL Player | WEBGL_TEST
+            /home/works/138/test_game/index.html
+            /home/styleForGame.css
+            /home/works/138/test_game/TemplateData/style.css
+            ){
+                トップページ,
+                期ごと一覧,
+                138期
+            },
+            ストラテジーゲーム
+            (Unity WebGL Player | strategy_game
+            /home/works/138/strategy_game/index.html
+            /home/styleForGame.css
+            /home/works/138/strategy_game/TemplateData/style.css
+            ){
+                トップページ,
+                期ごと一覧,
+                138期
+            },
+            その他
+            (others
+            /home/works/138/others/index.html
+            /home/works/style.css
+            /home/works/138/others/style.css
+            ){
+                公式X,
+                公式X,
+                公式X,
+
+                トップページ,
+                期ごと一覧,
+                138期
+            },
+
+            トップページ,
+            期ごと一覧
+        },
+        139期,
+
+        トップページ
+    }
+}
+
+ver. x.y.z：
+        x: メジャーバージョン 見た目や操作性に影響を及ぼすような大きな変更やページの追加など
+        y: マイナーバージョン 細かな機能向上や部分的な情報の追加やページの修正など
+        z: パッチバージョン バグ修正や誤字脱字の訂正など
+        versionはページが期ごとに更新されていることを示すために表示する
+
+/home/works/script.js：
+    このスクリプトは、紹介文の非表示と、動く画像の初期位置と大きさの設定と、
+    ul内の各ボタンクリック時の
+    ・画像のスライドイン/アウト
+    ・liのクラス変更(animationの実行)
+    ・紹介文の表示
+    を行っている
+    cssのanimationを使えばもっと簡単に実装できたのかもしれないが、ここではあえてそうしなかった。
+    煩わしく思ったら後の世代の人が変更してください
+
+/home/works/style.cssと/home/works/script.jsをつかったページに「コンテンツ」を増やしたいとき：
+    <li id="c{n}" class="toggleOffContent">
+        <p><button class="toggleButton" id="c{n}_button">...</button></p>
+        <div id="c{n}_intro">
+            <section>
+                <p>...</p>
+            </section>
+            <a class="to_nextPage" href="./{...}/index.html">
+                <p>Go to Page</p>
+            </a>
+        </div>
+    </li>
+    
+    {n}には一つ前のコンテンツのnに対してn+1を入れる
+    例："c{n}_intro" => "c{n+1}_intro"
+    他に{}がついているところは空気読んで変更してね
+
+    画像を添付したければ、
+    <ul id="contents">
+        ...
+        <img class="moving_img" id="c{n}_pic" name="{a}" src="{...}" alt="{...}">
+    </ul>
+    のように、"contents"ボックスの終わりに書く
+    {n}は先程と同様、{a}はscript.js内での指定に使う
+    
+    画像の大きさを指定したければ、
+    script.jsのimgNameCheckListに
+    a,大きさ(ビューポートheight)を記入する
+    どちらも""で囲うこと。
+
+情報を追加する際は、個人情報や重要情報の映り込みに細心の注意を払うこと。
+また、制作物を公開する際は、開発に関わった人と顧問に公開許可を得ること。
+特にゲームなどの場合は、有料のアセットなどが含まれていないかどうかを精査すること。
+github pagesは１GBまでしか公開できないので、それを超過した場合は
+有料プランに加入するか、サーバーを建てるか、サーバーをレンタルしてください。(本当はLinuxでサーバーを建てたいが、執筆当時(2024/10/28)は北野高校物理研究部の部室にインターネットが通っていないため、できない。)

@@ -29,8 +29,6 @@ movingImgs.forEach((img, j) => {
   for(let i = 0; i < movingImgs.length + 1; i++){
     if(img.name == imgNameCheckList[i * 2]){
       img.style.height = imgNameCheckList[i * 2 + 1] + "vh";
-      
-      console.log(imgNameCheckList[i * 2 + 1])
       img.style.width = "auto"; 
     }
   }
