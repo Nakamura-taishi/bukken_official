@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
+
 body,
 html {
     margin: 0;
     top: 0;
+}
+
+body {
+    background-image: url('./bukken_logo.png');
+    
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: top 80vh left 90vh;
 }
 
 #header {
@@ -26,10 +36,20 @@ p {
     margin: 0;
 }
 
+#main_contents {
+    
+}
+
 #introduce {
     margin-top: 10%;
     display: flex;
     justify-content: space-around;
+    
+}
+
+#intro_sentence{
+    font-size: large;
+    background-color: rgba(255, 255, 255, 0.562);
 }
 
 #game_img {}
@@ -50,26 +70,38 @@ footer {
     height: 5%;
     background: none;
     display: flex;
+    justify-content: flex-end;
 }
+
 
 footer a {
     font: inherit;
     text-decoration: inherit;
     padding-block: 1px;
     line-height: 2;
-}
-
-footer a {
     width: 20%;
-    margin-left: 80%;
     background: #ff701e;
     border: 2px solid #ff701e;
-    border-top-left-radius: 60px;
-    border-bottom-left-radius: 60px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
     color: #fff;
     display: block;
     font-weight: bold;
     max-width: 20%;
     padding: 0;
     text-align: center;
+}
+
+#page_name{
+    font-family: 'M PLUS 1p', sans-serif;
+}
+
+.topic {
+    border-bottom: 1px solid #000;
+    font-size: large;
+}
+
+.weak {
+    color: gray;
+    font-size: small;
 }
